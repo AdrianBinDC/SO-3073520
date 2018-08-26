@@ -25,14 +25,14 @@ import UIKit
 
 // Usage: insert view.fadeTransition right before changing content
 extension UIView {
-    func fadeTransition(_ duration:CFTimeInterval) {
-        let animation = CATransition()
-        animation.timingFunction = CAMediaTimingFunction(name:
-            kCAMediaTimingFunctionEaseInEaseOut)
-        animation.type = kCATransitionFade
-        animation.duration = duration
-        layer.add(animation, forKey: kCATransitionFade)
-    }
+  func fadeTransition(_ duration:CFTimeInterval) {
+    let animation = CATransition()
+    animation.timingFunction = CAMediaTimingFunction(name:
+      CAMediaTimingFunctionName.easeInEaseOut)
+    animation.type = CATransitionType.fade
+    animation.duration = duration
+    layer.add(animation, forKey: kCATransitionFade.rawValue)
+  }
 }
 
 class ViewController: UIViewController {
